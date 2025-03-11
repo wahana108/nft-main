@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://*.google.com https://discord.com https://https-sites-google-com-view-motherearthproject.disqus.com https://c.disquscdn.com; img-src 'self' https://discord.com https://*.disquscdn.com; frame-src 'self' http://localhost:3000 http://localhost:3001 http://localhost:3002 http://localhost:3003 http://localhost:3004 http://localhost:3005 https://www.youtube.com https://disqus.com; ">
+  <title>NFT Charity Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }
+    .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; }
+    .tab button:hover { background-color: #ddd; }
+    .tab button.active { background-color: #ccc; }
+    .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; }
+    iframe { width: 100%; height: 600px; border: none; }
+    #welcome-video { width: 100%; height: 315px; }
+  </style>
+</head>
+<body>
+  <h1>NFT Charity Platform</h1>
+  <div class="tab">
+    <button class="tablinks" data-tab="Charity">Charity</button>
+    <button class="tablinks" data-tab="Buy">Buy</button>
+    <button class="tablinks" data-tab="Buyback">Buyback</button>
+    <button class="tablinks" data-tab="TopDeveloper">Top Developer</button>
+    <button class="tablinks" data-tab="Welcome">Welcome and Rules</button>
+  </div>
+
+  <div id="Charity" class="tabcontent">
+    <iframe src="http://localhost:3001"></iframe>
+  </div>
+  <div id="Buy" class="tabcontent">
+    <iframe src="http://localhost:3000"></iframe>
+  </div>
+  <div id="Buyback" class="tabcontent">
+    <iframe src="http://localhost:3002"></iframe>
+  </div>
+  <div id="BuybackPool" class="tabcontent">
+    <h2>Buyback Pool</h2>
+    <p>NFT Rekomendasi (dari buyback2, status: completed):</p>
+    <div id="recommendations"></div>
+  </div>
+  <div id="TopDeveloper" class="tabcontent">
+    <iframe src="http://localhost:3003"></iframe>
+  </div>
+  <div id="Welcome" class="tabcontent">
+    <h2>Welcome and Rules</h2>
+    <iframe id="welcome-video" src="https://www.youtube.com/embed/2jXHzfe3OH4?disablekb=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+    <h3>Comment Policy</h3>
+    <p>- Gunakan bahasa yang sopan dan mendukung komunitas.<br>
+       - Tidak ada spam, ujaran kebencian, atau promosi tidak relevan.<br>
+       - Hormati pendapat lain—diskusi untuk kemajuan bersama.</p>
+    <h3>Aturan Dasar</h3>
+    <p>- Semua NFT dibuat untuk tujuan charity—pastikan deskripsi jelas.<br>
+       - Harga default: Rp100,000 (untuk saat ini).<br>
+       - Login hanya untuk user terdaftar—kontak admin untuk akses.</p>
+    <h3>Konsekuensi Anomali</h3>
+    <p>- Aktivitas anomali (penipuan, spam, manipulasi buyback) akan dipantau.<br>
+       - Konsekuensi: Akun dinonaktifkan permanen oleh admin.<br>
+       - if system failure - wild dog protocol activated.</p>
+       <p><strong>Komunitas Discord:</strong> Bergabung untuk diskusi lebih lanjut:<br>
+        <a href="https://discord.gg/vKpQqyws" target="_blank">Join Discord</a></p>
+
+    <!-- Disqus comments -->
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        var disqus_config = function () {
+            this.page.url = 'https://sites.google.com/view/motherearthproject/project-nft-tmt-01?authuser=0';
+            this.page.identifier = 'project-nft-tmt-01';
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-sites-google-com-view-motherearthproject.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- End Disqus Comments -->
+  </div>
+
+  <script src="/script.js"></script>
+  <script>
+    document.querySelectorAll('.tablinks').forEach(btn => {
+      btn.addEventListener('click', (e) => openTab(e, e.target.getAttribute('data-tab')));
+    });
+     function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementsByClassName("tablinks")[0].click();
+  </script>
+</body>
+</html>
