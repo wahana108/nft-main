@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://*.google.com https://discord.com https://https-sites-google-com-view-motherearthproject.disqus.com https://c.disquscdn.com; img-src 'self' https://discord.com https://*.disquscdn.com; frame-src 'self' http://localhost:3000 http://localhost:3001 http://localhost:3002 http://localhost:3003 http://localhost:3004 http://localhost:3005 https://www.youtube.com https://disqus.com; ">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://*.google.com https://discord.com https://https-sites-google-com-view-motherearthproject.disqus.com https://c.disquscdn.com; img-src 'self' https://discord.com https://*.disquscdn.com; frame-src 'self' https://www.youtube.com https://disqus.com; connect-src 'self' https://oqquvpjikdbjlagdlbhp.supabase.co https://*.vercel.app;">
   <title>NFT Charity Platform</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-    .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; display: flex; justify-content: center; margin-bottom: 20px; } /* Center the buttons and add margin below */
-    .tab a { background-color: inherit; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; margin: 0 5px; text-decoration: none; color: inherit; } /* Add margin between buttons and remove text decoration */
-    .tab a:hover { background-color: #ddd; }
-    .tabcontent { display: block; padding: 6px 12px; border: 1px solid #ccc; border-top: none; } /* Show the content by default */
-    .link-button {
-      background-color: #4CAF50; /* Green */
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 5px;
+    .tab { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+      gap: 10px; 
+      justify-items: center; 
+      border: 1px solid #ccc; 
+      background-color: #f1f1f1; 
+      padding: 15px; 
+      margin-bottom: 20px; 
     }
-    #welcome-video { width: 100%; height: 315px; }
+    .tab div { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
+    }
+    .tab a { 
+      background-color: #4CAF50; 
+      color: white; 
+      padding: 12px 20px; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      transition: background-color 0.3s; 
+      width: 100%; 
+      max-width: 200px; 
+      cursor: pointer;
+    }
+    .tab a:hover { background-color: #45a049; }
+    .link-description { 
+      font-size: 12px; 
+      color: #555; 
+      margin-top: 5px; 
+      max-width: 200px; 
+    }
+    #welcome-video { width: 100%; max-width: 560px; height: 315px; }
+    @media (max-width: 600px) {
+      .tab { grid-template-columns: 1fr; }
+      .tab a { font-size: 14px; padding: 10px 15px; }
+      .link-description { font-size: 11px; }
+    }
   </style>
 </head>
 <body>
   <h1>NFT Charity Platform</h1>
   <div class="tab">
-    <a href="https://nft-charity-eight.vercel.app/" target class="link-button">Charity</a>
-    <a href="https://nft-buy.vercel.app/" target class="link-button">Buy</a>
-    <a href="https://nft-buyback.vercel.app/" target class="link-button">Buyback</a>
-    <a href="https://nft-top-developer.vercel.app/" target class="link-button">Top Developer</a>
-    <a href="https://nft-mastermind.vercel.app/" target class="link-button">HOME</a>
+    <div>
+      <a href="https://nft-charity-kappa.vercel.app/">Charity</a>
+      <p class="link-description">Vote for NFT designs to support charity projects.</p>
+    </div>
+    <div>
+      <a href="https://nft-buy.vercel.app/">Buy</a>
+      <p class="link-description">Purchase NFTs in our peer-to-peer marketplace.</p>
+    </div>
+    <div>
+      <a href="https://nft-buyback.vercel.app/">Buyback</a>
+      <p class="link-description">Request buyback for purchased NFTs.</p>
+    </div>
+    <div>
+      <a href="https://nft-top-developer.vercel.app/">Top Developer</a>
+      <p class="link-description">View top vendors based on buyback scores.</p>
+    </div>
+    <div>
+      <a href="https://nft-mastermind.vercel.app/">Home</a>
+      <p class="link-description">Return to the main platform hub.</p>
+    </div>
   </div>
-    <h2>Welcome and Rules</h2>
-    <iframe id="welcome-video" src="https://www.youtube.com/embed/2jXHzfe3OH4?disablekb=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
-    <h3>Comment Policy</h3>
-    <p>- Gunakan bahasa yang sopan dan mendukung komunitas.<br>
-       - Tidak ada spam, ujaran kebencian, atau promosi tidak relevan.<br>
-       - Hormati pendapat lain—diskusi untuk kemajuan bersama.</p>
-    <h3>Aturan Dasar</h3>
-    <p>- Semua NFT dibuat untuk tujuan charity—pastikan deskripsi jelas.<br>
-       - Harga default: Rp100,000 (untuk saat ini).<br>
-       - Login hanya untuk user terdaftar—kontak admin untuk akses.</p>
-    <h3>Konsekuensi Anomali</h3>
-    <p>- Aktivitas anomali (penipuan, spam, manipulasi buyback) akan dipantau.<br>
-       - Konsekuensi: Akun dinonaktifkan permanen oleh admin.<br>
-       - if system failure - wild dog protocol activated.</p>
-       <p><strong>Komunitas Discord:</strong> Bergabung untuk diskusi lebih lanjut:<br>
-        <a href="https://discord.gg/vKpQqyws" target="_blank">Join Discord</a></p>
-
-    <!-- Disqus comments -->
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        var disqus_config = function () {
-            this.page.url = 'https://sites.google.com/view/motherearthproject/project-nft-tmt-01?authuser=0';
-            this.page.identifier = 'project-nft-tmt-01';
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://https-sites-google-com-view-motherearthproject.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <!-- End Disqus Comments -->
+  <h2>Welcome and Rules</h2>
+  <iframe id="welcome-video" src="https://www.youtube.com/embed/2jXHzfe3OH4?disablekb=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+  <h3>Comment Policy</h3>
+  <p>- Gunakan bahasa yang sopan dan mendukung komunitas.<br>
+     - Tidak ada spam, ujaran kebencian, atau promosi tidak relevan.<br>
+     - Hormati pendapat lain—diskusi untuk kemajuan bersama.</p>
+  <h3>Aturan Dasar</h3>
+  <p>- Semua NFT dibuat untuk tujuan charity—pastikan deskripsi jelas.<br>
+     - Harga default: Rp100,000 (untuk saat ini).<br>
+     - Login hanya untuk user terdaftar—kontak admin untuk akses.</p>
+  <h3>Konsekuensi Anomali</h3>
+  <p>- Aktivitas anomali (penipuan, spam, manipulasi buyback) akan dipantau.<br>
+     - Konsekuensi: Akun dinonaktifkan permanen oleh admin.<br>
+     - If system failure - Wild Dog Protocol activated.</p>
+  <p><strong>Komunitas Discord:</strong> Bergabung untuk diskusi lebih lanjut:<br>
+     <a href="https://discord.gg/vKpQqyws" target="_blank">Join Discord</a></p>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/motherearthproject/project-nft-tmt-01?authuser=0';
+      this.page.identifier = 'project-nft-tmt-01';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-sites-google-com-view-motherearthproject.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script src="/script.js"></script>
 </body>
 </html>
